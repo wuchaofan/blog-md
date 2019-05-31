@@ -1,6 +1,8 @@
 * [学习列表](README.md)
 * [渲染的那些事(服务端、前端、预渲染)](RenderPage.md)
 * [吸顶 ](<http://wuchaofan.github.io/b/menu-sticky.html>)
+* [Swift与Flutter](Swift_Flutter.md)
+* [搭建sentry以及sourcemap](Sentry.md)
 * [2017总结及趋势](<http://wuchaofan.github.io/2017summary.html>)
 
 - [Service Worker](http://wuchaofan.github.io/sw.html)
