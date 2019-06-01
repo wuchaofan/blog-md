@@ -51,6 +51,8 @@ self.present(flutterViewController, animated: true, completion: nil)
 
 注意上面的`automaticallyImplyLeading: true` 以及leading部分，就是back button，但是注意_close部分的实现，由于页面可能是flutter容器其他页面push打开的，我们需要判断`Navigator.of(context).canPop()` 如果为真，我们只需要`Navigator.of(context).pop();` 否则直接`FlutterBridge.close();` 关闭flutter viewcontroller。iOS与fluter页面的通信MethodChannel基本使用就说到这里, 如果需要监听事件就需要EventChannel了。
 
+[Github仓库](https://github.com/fluttercase/ios-flutter)
+
 完。
 
  
