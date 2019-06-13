@@ -54,7 +54,7 @@ React native已经用在了很多线上产品上，前段时间flutter release�
 
 ####6、app包大小
 
-不必说集成flutter的app bundle更大，因为flutter从底层构建的sdk，而RN相对SDK较小，rn使用的javascript解释器来自平台，比如iOS的JavaScriptCore，js部分可以网络。
+不必说集成flutter的app bundle更大，因为flutter从底层构建的sdk，而RN相对SDK较小，rn使用的javascript解释器来自平台，比如iOS的JavaScriptCore，js部分可以网络请求获取。
 
 综上：RN比Flutter优
 
