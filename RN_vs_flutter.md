@@ -28,9 +28,7 @@ React native已经用在了很多线上产品上，前段时间flutter release�
 
 #### 3、开发效率
 
-虽然性能排在第二，但是对于业务来说，效率更重要，性能往往其次，因为公司管理者希望尽可能快的产品上线，
-
-那么RN、flutter比较好的选择，RN不必说，前端的开发方式，比如语言js、样式类似css、布局flexbox、热更新，flutter有同样的优势，只是RN使用的jsx明显好于flutter函数调用陷阱模式，flutter widget如果界面结构复杂，最好封装到不同的widget中，但是对开发速度上影响不大。另外RN的缺点是开发出的iOS与Android需要统一好UI，需要iOS、android原生支持，即使这样开发出的页面一致性可能也不一致，所以要注意调整，flutter一致性就比较好，另外flutter提供了丰富的UI组件，以及简单的可定制化的组建，实现绚丽的样式、复杂的交互逻辑相对于RN，flutter简单很多。热更新方面以本人的感受来说flutter更好一些，虽然两者都有，但是好于原生开发。
+虽然性能排在第二，但是对于业务来说，效率更重要，性能往往其次，因为公司管理者希望尽可能快的产品上线，那么RN、flutter比较好的选择，RN不必说，前端的开发方式，比如语言js、样式类似css、布局flexbox、热更新，flutter有同样的优势，只是RN使用的jsx明显好于flutter函数调用陷阱模式，flutter widget如果界面结构复杂，最好封装到不同的widget中，但是对开发速度上影响不大。另外RN的缺点是开发出的iOS与Android需要统一好UI，需要iOS、android原生支持，即使这样开发出的页面一致性可能也不一致，所以要注意调整，flutter一致性就比较好，另外flutter提供了丰富的UI组件，以及简单的可定制化的组建，实现绚丽的样式、复杂的交互逻辑相对于RN，flutter简单很多。热更新方面以本人的感受来说flutter更好一些，虽然两者都有，但是好于原生开发。
 
 综上：RN、Flutter各有缺点，但是明显好于iOS、Android原生的开发效率，但是flutter效率会高。
 
