@@ -14,7 +14,7 @@
 
 ### 方案
 
-最直观的想法有两个，怎样做到从B页面回来后，A页面能够获取B页面的数据能。
+最直观的想法有两个，怎样做到从B页面回来后，A页面能够获取B页面的数据呢。
 
 1、通过url带参数或者localStorage，A页面能够获取
 
@@ -23,7 +23,7 @@
 首先来说说第二种SPA能够很好的解决页面间的通信，所以B回到A能都触发事件，可以利用keep-alive功能，数据传递方式几乎不用改动。看起来挺不错，但是最直接的问题是老项目与新项目页面怎样通信，一个是SPA单页，一个是多页，部署上就要有改动；其次使用keep-alive导致相同path，但是query不同的url不好处理，通过keep-alive组件上加key又会导致页面数据丢失。还有一个很难解决的是headerbar部分，app里这部分是native实现，而现在在浏览器spa中，headerbar中数据更新是一个难点，因为从B回到A时，mounted钩子不会触发，触发的是activated，所以业务中的setHeader逻辑都要在
 activated钩子里调用。最终放弃使用SPA的方式。
 
-那么第一种直观上来说架构没有变，都是多页面，新老项目部署不变。但是最大的难点是怎样是A存活呢，可以肯定的说做不到。我们只是希望在A页面加入到订阅的逻辑，在B回到A时能触发即可。把callback不存在sessionStorage或者localStorage不可，因为上下文信息会丢失。这部分最后的办法就是把所有订阅代码提取出来，放在Object里，如下
+那么第一种直观上来说架构没有变，都是多页面，新老项目部署不变。但是最大的难点是怎样是A存活呢，可以肯定的说做不到。我们只是希望在A页面加入到订阅的逻辑，在B回到A时能触发即可。把callback转成字符串保存在sessionStorage或者localStorage中不可取，因为上下文信息会丢失。这部分最后的办法就是把所有订阅代码提取出来，放在Object里，如下
 伪代码：
 
 ```javascript
@@ -44,11 +44,11 @@ EventListener.on('onBack', function (from, data) {
 现在改成：
 
 ```javascript
-EventListener.on('onBack', EventMap.a1, 'a1')
+EventListener.on('onBack', EventMap.a1.bind(this), 'a1')
 ```
 
 当然我们还需要在EventListener.on方法里保存a1到sessionStorage或者localStorage里，因为我们需要维护一个列表，在A页面再次载入后读取这个列表
 然后获取EventMap中的function遍历执行。当然这只是经过多次尝试后的方案，
-需求刚刚开始，在此记录一下。
+开发刚刚开始，在此记录一下。
 
-2019/8/24
+> 2019/8/24
